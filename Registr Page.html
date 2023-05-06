@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+
+        const form = document.querySelector('form');
+        const name = document.querySelector('#name');
+        const email = document.querySelector('#email');
+        const password = document.querySelector('#password');
+        const confirmPassword = document.querySelector('#confirm-password');
+        
+        form.addEventListener('submit', e => {
+        e.preventDefault();
+        if (name.value.trim() === '') {
+        alert('Please enter your name');
+        name.focus();
+        return;
+        }
+        if (email.value.trim() === '') {
+        alert('Please enter your email');
+        email.focus();
+        return;
+        }
+        if (password.value.trim() === '') {
+        alert('Please enter your password');
+        password.focus();
+        return;
+        }
+        if (confirmPassword.value !== password.value) {
+        alert('Passwords do not match!');
+        confirmPassword.focus();
+        return;
+        }
+        alert('Registration Successful!');
+        });
+        
+        </script>
+<style>
+    body {
+background-color: #F5F5F5;
+}
+.wrapper {
+max-width: 500px;
+margin: 50px auto;
+background-color: #FFFFFF;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+text-align: center;
+font-size: 36px;
+}
+
+form {
+text-align: left;
+}
+
+label {
+display: block;
+font-size: 18px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+width: 100%;
+border: 2px solid #D3D3D3;
+border-radius: 5px;
+padding: 10px;
+margin-bottom: 15px;
+font-size: 18px;
+}
+
+input[type="submit"] {
+background-color: #4285F4;
+color: #FFFFFF;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #357AE8;
+}
+</style>
+
+<body>
+<div class="wrapper">
+<h1>Register</h1>
+<form>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+<br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<br>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+<br>
+<label for="confirm-password">Confirm Password:</label>
+<input type="password" id="confirm-password" name="confirm-password" required>
+<br>
+<input type="submit" value="Register">
+</form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
